@@ -1,0 +1,10 @@
+*.txt
+*.Db_Store
+__pycache__
+build
+*.capsolver
+*.egg-info
+reinstall.sh
+*.jpg
+*.png
+dist
