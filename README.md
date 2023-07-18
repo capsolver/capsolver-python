@@ -8,9 +8,10 @@ Capsolver official python library
 - ReCaptchaV2
 - ReCaptchav3
 - MtCaptcha
-- Datadom
+- Datadome
 - Cloudflare
-- Kasada
+- Amazon captcha(AWS WAF)
+- Cybersiara captcha
 - Akamai BMP
 
 
