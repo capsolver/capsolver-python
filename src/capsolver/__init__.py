@@ -5,7 +5,7 @@ from capsolver.error import  InvalidRequestError, IncompleteJobError, RateLimitE
 
 api_base = os.environ.get("CAPSOLVER_API_BASE", "https://api.capsolver.com")
 api_key = os.environ.get("CAPSOLVER_API_KEY")
-appID = os.environ.get("CAPSOLVER_APP_ID")
+appId = os.environ.get("CAPSOLVER_APP_ID")
 solve = Capsolver.solve
 balance = Capsolver.balance
 proxy = None
