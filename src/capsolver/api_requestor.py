@@ -116,7 +116,7 @@ class APIRequestor:
         json_data = {
             "clientKey":self.api_key
         }
-        if capsolver.appid and capsolver.appid.strip():
+        if self.appId:
             json_data["appId"] = self.appId
         json_data.update(params)
         headers = self.request_headers(headers)
