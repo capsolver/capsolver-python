@@ -49,9 +49,10 @@ def _make_session():
 
 
 class APIRequestor:
-    def __init__(self, key=None, api_base=None):
+    def __init__(self, key=None, api_base=None, appId=None):
         self.api_base = api_base or capsolver.api_base
         self.api_key = key or capsolver.api_key
+        self.appId = appId or capsolver.appId
 
     def request(self, method, url, params=None, headers=None, request_timeout=None):
         result = self.request_raw(method.lower(), url, params=params, supplied_headers=headers, request_timeout=request_timeout)
@@ -113,8 +114,10 @@ class APIRequestor:
         abs_url = "%s%s" % (self.api_base, url)
         headers = self._validate_headers(supplied_headers)
         json_data = {
-            "clientKey":self.api_key,
+            "clientKey":self.api_key
         }
+        if capsolver.appid and capsolver.appid.strip():
+            json_data["appId"] = self.appId
         json_data.update(params)
         headers = self.request_headers(headers)
         if not hasattr(_thread_context, "session"):
