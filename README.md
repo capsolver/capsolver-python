@@ -8,11 +8,8 @@ Capsolver official python library
 - ReCaptchaV2
 - ReCaptchav3
 - MtCaptcha
-- Datadome
 - Cloudflare
 - Amazon captcha(AWS WAF)
-- Cybersiara captcha
-- Akamai BMP
 
 
 ## Installation
