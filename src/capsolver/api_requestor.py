@@ -52,6 +52,7 @@ class APIRequestor:
     def __init__(self, key=None, api_base=None):
         self.api_base = api_base or capsolver.api_base
         self.api_key = key or capsolver.api_key
+        self.verify_ssl = capsolver.verify_ssl
 
     def request(self, method, url, params=None, headers=None, request_timeout=None):
         result = self.request_raw(method.lower(), url, params=params, supplied_headers=headers, request_timeout=request_timeout)
@@ -120,7 +121,7 @@ class APIRequestor:
         if not hasattr(_thread_context, "session"):
             _thread_context.session = _make_session()
         try:
-            result = _thread_context.session.request(method, abs_url, headers=headers, json=json_data, timeout=request_timeout if request_timeout else TIMEOUT_SECS)
+            result = _thread_context.session.request(method, abs_url, headers=headers, json=json_data, timeout=request_timeout if request_timeout else TIMEOUT_SECS, verify=self.verify_ssl)
         except requests.exceptions.Timeout as e:
             raise error.Timeout("Request timed out") from e
         except requests.exceptions.RequestException as e:
