@@ -8,6 +8,7 @@ api_key = os.environ.get("CAPSOLVER_API_KEY")
 solve = Capsolver.solve
 balance = Capsolver.balance
 proxy = None
+verify_ssl = True
 
 
 __all__ = [
@@ -26,4 +27,5 @@ __all__ = [
     "api_base",
     "api_key",
     "proxy",
+    "verify_ssl",
 ]
