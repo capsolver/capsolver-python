@@ -3,7 +3,6 @@ Capsolver official python library
 
 ## Supported CAPTCHA types:
 - HCaptcha
-- FunCaptcha
 - Geetest
 - ReCaptchaV2
 - ReCaptchav3
